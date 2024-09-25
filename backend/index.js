@@ -10,14 +10,16 @@ const app = express();
 // middleware to parse incoming request with JSON payloads
 app.use(express.json());
 
+app.use(cors());
+
 // middleware for handling CORS
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000",
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["Content-Type"],
+//   })
+// );
 
 app.get("/", (request, response) => {
   console.log(request);
